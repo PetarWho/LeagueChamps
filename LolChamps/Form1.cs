@@ -77,8 +77,12 @@ namespace LolChamps // This project was originally created for League of Legends
 
         private void ClearListBtn_Click(object sender, EventArgs e)
         {
-            champListBox.Items.Clear();
-            ChampCount = 0;
+            DialogResult dr = MessageBox.Show("Do you really want to clear the list?", "Clear list", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                champListBox.Items.Clear();
+                ChampCount = 0;
+            }
         }
         static string FixName(string str)
         {
