@@ -131,7 +131,7 @@ namespace LolChamps // This project was originally created for League of Legends
                     }
                     else
                     {
-                        MessageBox.Show("Not on the list!", $"{currentChamp} is not on the list!", MessageBoxButtons.OK);
+                        MessageBox.Show($"{currentChamp} is not on the list!", "Not on the list!", MessageBoxButtons.OK);
                     }
                 }
                 hasInput = true;
