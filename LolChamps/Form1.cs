@@ -126,11 +126,15 @@ namespace LolChamps // This project was originally created for League of Legends
                 {
                     if (champListBox.Items.Contains(currentChamp))
                     {
-                        hasInput = true;
                         champListBox.Items.Remove(currentChamp);
                         ChampCount--;
                     }
+                    else
+                    {
+                        MessageBox.Show("Not on the list!", $"{currentChamp} is not on the list!", MessageBoxButtons.OK);
+                    }
                 }
+                hasInput = true;
                 champNameBox.Text = "";
             }
             if (!hasInput)
