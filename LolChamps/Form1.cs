@@ -66,7 +66,7 @@ namespace LolChamps // This project was originally created for League of Legends
             }
             else
             {
-                MessageBox.Show("This name is already on the list!", "Already on the list!", MessageBoxButtons.OK);
+                MessageBox.Show($"{currentChamp} is already on the list!", "Already on the list!", MessageBoxButtons.OK);
             }
             champNameBox.Clear();
         }
