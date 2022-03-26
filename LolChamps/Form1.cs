@@ -31,7 +31,8 @@ namespace LolChamps // This project was originally created for League of Legends
             {
                 File.Create(@"..\champList.txt").Close();
             }
-            else
+
+            if(File.Exists(@"..\champList.txt"))
             {
                 champListBox.Items.Clear();
                 try
