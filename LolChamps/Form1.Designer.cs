@@ -41,6 +41,10 @@ namespace LolChamps
             this.ClearListBtn = new System.Windows.Forms.Button();
             this.champCountLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.costBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.totalCost = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // champListBox
@@ -81,19 +85,20 @@ namespace LolChamps
             // 
             // champNameBox
             // 
-            this.champNameBox.Location = new System.Drawing.Point(249, 112);
+            this.champNameBox.Location = new System.Drawing.Point(196, 106);
             this.champNameBox.Name = "champNameBox";
-            this.champNameBox.Size = new System.Drawing.Size(148, 22);
+            this.champNameBox.Size = new System.Drawing.Size(132, 22);
             this.champNameBox.TabIndex = 2;
+            this.champNameBox.TextChanged += new System.EventHandler(this.champNameBox_TextChanged);
             this.champNameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.champNameBox_KeyDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(249, 79);
+            this.label1.Location = new System.Drawing.Point(196, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 26);
+            this.label1.Size = new System.Drawing.Size(132, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "Champion name";
             // 
@@ -141,21 +146,66 @@ namespace LolChamps
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(12, 2);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 20);
+            this.label3.Size = new System.Drawing.Size(117, 19);
             this.label3.TabIndex = 7;
             this.label3.Text = "Names in the list:";
+            // 
+            // costBox
+            // 
+            this.costBox.Location = new System.Drawing.Point(346, 106);
+            this.costBox.Name = "costBox";
+            this.costBox.Size = new System.Drawing.Size(74, 22);
+            this.costBox.TabIndex = 2;
+            this.costBox.TextChanged += new System.EventHandler(this.costBox_TextChanged);
+            this.costBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.champNameBox_KeyDown);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(362, 79);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 24);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Cost";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(12, 311);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 19);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "BE needed:";
+            // 
+            // totalCost
+            // 
+            this.totalCost.BackColor = System.Drawing.Color.Transparent;
+            this.totalCost.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.totalCost.Location = new System.Drawing.Point(95, 311);
+            this.totalCost.Name = "totalCost";
+            this.totalCost.Size = new System.Drawing.Size(119, 20);
+            this.totalCost.TabIndex = 9;
+            this.totalCost.Text = "0";
+            this.totalCost.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(432, 323);
+            this.ClientSize = new System.Drawing.Size(432, 333);
+            this.Controls.Add(this.totalCost);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.champCountLabel);
             this.Controls.Add(this.ClearListBtn);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.costBox);
             this.Controls.Add(this.champNameBox);
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.RemoveBtn);
@@ -163,8 +213,8 @@ namespace LolChamps
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(450, 370);
-            this.MinimumSize = new System.Drawing.Size(450, 370);
+            this.MaximumSize = new System.Drawing.Size(450, 380);
+            this.MinimumSize = new System.Drawing.Size(450, 380);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOL Champs";
@@ -187,6 +237,10 @@ namespace LolChamps
         private System.Windows.Forms.Button ClearListBtn;
         private System.Windows.Forms.Label champCountLabel;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox costBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label totalCost;
     }
 }
 

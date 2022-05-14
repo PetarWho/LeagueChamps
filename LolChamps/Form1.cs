@@ -23,6 +23,15 @@ namespace LolChamps // This project was originally created for League of Legends
             get => int.Parse(champCountLabel.Text);
             set => champCountLabel.Text = value.ToString();
         }
+
+        public int TotalCost
+        {
+            get => int.Parse(totalCost.Text);
+            set => totalCost.Text = value.ToString();
+        }
+
+        public Dictionary<string, int> champs = new Dictionary<string, int>();
+
         private string filePath = @"champList.txt";
         private StreamReader sr;
         private void fileDirectory()
@@ -32,7 +41,7 @@ namespace LolChamps // This project was originally created for League of Legends
                 File.Create(@"..\champList.txt").Close();
             }
 
-            if(File.Exists(@"..\champList.txt"))
+            if (File.Exists(@"..\champList.txt"))
             {
                 champListBox.Items.Clear();
                 try
@@ -40,18 +49,32 @@ namespace LolChamps // This project was originally created for League of Legends
                     sr = new StreamReader(filePath);
                     while (!sr.EndOfStream)
                     {
-                        champListBox.Items.Add(sr.ReadLine());
+                        string[] info = sr.ReadLine().Split('-').ToArray();
+                        string champ = info[0];
+                        int cost = int.Parse(info[1]);
+                        champs.Add(champ, cost);
+                        champListBox.Items.Add(champ);
                     }
                     sr.Dispose();
                 }
                 catch (Exception) { }
-                finally { ChampCount = champListBox.Items.Count; }
+                finally
+                {
+                    ChampCount = champListBox.Items.Count;
+                    int sum = 0;
+                    foreach (var item in champs)
+                    {
+                        sum += item.Value;
+                    }
+                    TotalCost = sum;
+                }
             }
         }
         private void AddChamp()
         {
             string currentChamp = champNameBox.Text.ToLower().Trim();
-            if (currentChamp == "")
+            int currentCost = int.Parse(costBox.Text.Trim());
+            if (currentChamp.Trim() == "")
             {
                 MessageBox.Show("Name cannot be empty", "Oops..", MessageBoxButtons.OK);
                 return;
@@ -60,9 +83,11 @@ namespace LolChamps // This project was originally created for League of Legends
             if (!champListBox.Items.Contains(currentChamp))
             {
                 champListBox.Items.Add(currentChamp);
+                champs.Add(currentChamp, currentCost);
                 StreamWriter sw = File.AppendText(filePath);
                 ChampCount++;
-                sw.WriteLine(currentChamp);
+                TotalCost += currentCost;
+                sw.WriteLine(currentChamp + '-' + currentCost);
                 sw.Dispose();
             }
             else
@@ -83,6 +108,7 @@ namespace LolChamps // This project was originally created for League of Legends
             {
                 champListBox.Items.Clear();
                 ChampCount = 0;
+                TotalCost = 0;
             }
         }
         static string FixName(string str)
@@ -132,6 +158,8 @@ namespace LolChamps // This project was originally created for League of Legends
                     if (champListBox.Items.Contains(currentChamp))
                     {
                         champListBox.Items.Remove(currentChamp);
+                        champs.Remove(currentChamp);
+                        TotalCost -= champs[currentChamp];
                         ChampCount--;
                     }
                     else
@@ -148,7 +176,10 @@ namespace LolChamps // This project was originally created for League of Legends
                     MessageBox.Show("Please select a champ or type it's name!", "No item selected!", MessageBoxButtons.OK);
                 else
                 {
+                    string champ = champListBox.SelectedItem.ToString();
                     champListBox.Items.Remove(champListBox.SelectedItem);
+                    TotalCost -= champs[champ];
+                    champs.Remove(champ);
                     ChampCount--;
                 }
             }
@@ -157,11 +188,21 @@ namespace LolChamps // This project was originally created for League of Legends
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             StreamWriter sw = new StreamWriter(filePath);
-            foreach (var item in champListBox.Items)
+            foreach (var champ in champs)
             {
-                sw.WriteLine(item);
+                sw.WriteLine(champ.Key + '-' + champ.Value);
             }
             sw.Dispose();
+        }
+
+        private void champNameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void costBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
