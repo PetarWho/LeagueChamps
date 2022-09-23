@@ -35,26 +35,29 @@ namespace LeagueChampsApp
         {
             countByPriceLbl.Visibility = Visibility.Hidden;
             loggedLbl.Visibility = Visibility.Hidden;
-        }
 
-        private void ShowLabels()
-        {
-            totalRpLbl.Visibility = Visibility.Visible;
-            totalBeLbl.Visibility = Visibility.Visible;
-            resourcesNeeded.Visibility = Visibility.Visible;
-            countLbl.Visibility = Visibility.Visible;
+            totalBeLbl.Visibility = Visibility.Hidden;
+            totalRpLbl.Visibility = Visibility.Hidden;
+            resourcesNeeded.Visibility = Visibility.Hidden;
+            countLbl.Visibility = Visibility.Hidden;
         }
 
         private void LoginInfoVisibility(bool visible)
         {
             usernameBox.Visibility = visible ? Visibility.Visible : Visibility.Hidden;
-            usernameBoxLbl.Visibility = Visibility.Hidden;
+            usernameBoxLbl.Visibility = visible ? Visibility.Visible : Visibility.Hidden;
             passBox.Visibility = visible ? Visibility.Visible : Visibility.Hidden;
             passBoxLbl.Visibility = visible ? Visibility.Visible : Visibility.Hidden;
             loginBtn.Visibility = visible ? Visibility.Visible : Visibility.Hidden;
+            statusLbl.Visibility = visible ? Visibility.Visible : Visibility.Hidden;
 
             countByPriceLbl.Visibility = visible ? Visibility.Hidden : Visibility.Visible;
             loggedLbl.Visibility = visible ? Visibility.Hidden : Visibility.Visible;
+
+            totalBeLbl.Visibility = visible ? Visibility.Hidden : Visibility.Visible;
+            totalRpLbl.Visibility = visible ? Visibility.Hidden : Visibility.Visible;
+            resourcesNeeded.Visibility = visible ? Visibility.Hidden : Visibility.Visible;
+            countLbl.Visibility = visible ? Visibility.Hidden : Visibility.Visible;
         }
 
         private User currentUser;
@@ -97,7 +100,6 @@ namespace LeagueChampsApp
                 return;
             }
 
-            loggedLbl.Foreground = new SolidColorBrush(Color.FromRgb(100, 255, 100));
             loggedLbl.Content = "Logged in as " + user.Username;
 
 
@@ -113,7 +115,6 @@ namespace LeagueChampsApp
             champsListView.ItemsSource = champs;
             currentUser = user;
             UpdateTotalPriceAndCountLabels();
-            ShowLabels();
         }
 
         private void buyBtn_Click(object sender, RoutedEventArgs e)

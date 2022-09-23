@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LeagueChampsApp"
         mc:Ignorable="d"
-        Title="LeagueChamps" Height="514" Width="800">
-    <Grid>
+        Title="LeagueChamps" Height="514" Width="820" ResizeMode="NoResize">
+    <Grid Width="820" Height="514">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black"/>
-                <GradientStop Color="#FFEFF79C" Offset="1"/>
-                <GradientStop Color="#FF515F03" Offset="0"/>
+                <GradientStop Color="#FF668D5D" Offset="1"/>
+                <GradientStop Color="#FF748D71" Offset="0"/>
             </LinearGradientBrush>
         </Grid.Background>
         <TextBox x:Name="usernameBox" HorizontalAlignment="Left" Height="35" Margin="35,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" KeyDown="usernameBox_KeyDown"/>
@@ -38,7 +38,7 @@
         <Label x:Name="countLbl" Content="Count: 1000" HorizontalAlignment="Left" Margin="437,5,0,0" VerticalAlignment="Top" Width="104" FontSize="16" FontWeight="ExtraBold" Visibility="Hidden"/>
         <Label x:Name="countByPriceLbl" Content="TEST LABEL" HorizontalAlignment="Left" Height="103" Margin="24,54,0,0" VerticalAlignment="Top" Width="186" FontFamily="Segoe UI Semibold" FontSize="14" Visibility="Collapsed"/>
         <StackPanel HorizontalAlignment="Left" Height="197" Margin="10,10,0,0" VerticalAlignment="Top" Width="165" Visibility="Hidden"/>
-        <Label x:Name="loggedLbl" Content="" HorizontalAlignment="Left" Height="44" Margin="24,5,0,0" VerticalAlignment="Top" Width="291" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="loggedLbl" Content="" HorizontalAlignment="Left" Height="44" Margin="24,5,0,0" VerticalAlignment="Top" Width="291" FontSize="16" FontWeight="Bold" Foreground="#FF0006FF"/>
 
     </Grid>
 </Window>
