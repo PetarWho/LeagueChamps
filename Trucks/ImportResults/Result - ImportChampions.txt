@@ -22,7 +22,7 @@ Successfully imported champion - Tryndamere.
 Successfully imported champion - Twitch.
 Successfully imported champion - Karthus.
 Successfully imported champion - Amumu.
-Successfully imported champion - Cho'Gath'.
+Successfully imported champion - Cho'Gath.
 Successfully imported champion - Anivia.
 Successfully imported champion - Rammus.
 Successfully imported champion - Veigar.
@@ -159,3 +159,5 @@ Successfully imported champion - Zeri.
 Successfully imported champion - Renata Glasc.
 Successfully imported champion - Bel'Veth.
 Successfully imported champion - Nilah.
+Successfully imported champion - K'Sante.
+Successfully imported champion - Milio.

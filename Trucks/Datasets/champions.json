@@ -1929,6 +1929,43 @@
     "PriceRP": 975,
     "ReleaseDate": "2022-07-13",
     "HasMana": true,
+    "IsRanged": true
+  },
+  {
+    "Name": "K'Sante",
+    "Description": "The Pride of Nazumah",
+    "Image": "https://static.wikia.nocookie.net/leagueoflegends/images/5/57/K%27Sante_OriginalSquare.png/revision/latest/scale-to-width-down/42?cb=20221020203752",
+    "Position": "Top",
+    "Class": "Fighter",
+    "PriceBE": 6300,
+    "PriceRP": 975,
+    "ReleaseDate": "2022-11-02",
+    "HasMana": true,
+    "IsRanged": false
+  },
+  {
+    "Name": "Milio",
+    "Description": "The Gentle Flame",
+    "Image": "https://static.wikia.nocookie.net/leagueoflegends/images/2/23/Milio_OriginalSquare.png/revision/latest/scale-to-width-down/42?cb=20230308011018",
+    "Position": "Support",
+    "Class": "Support",
+    "PriceBE": 6300,
+    "PriceRP": 975,
+    "ReleaseDate": "2023-03-23",
+    "HasMana": true,
     "IsRanged": false
   }
+  //,
+  //{
+  //  "Name": "Naafiri",
+  //  "Description": "The Dark Assassin",
+  //  "Image": "https://static.wikia.nocookie.net/leagueoflegends/images/2/23/Milio_OriginalSquare.png/revision/latest/scale-to-width-down/42?cb=20230308011018",
+  //  "Position": "Mid",
+  //  "Class": "Assassin",
+  //  "PriceBE": 6300,
+  //  "PriceRP": 975,
+  //  "ReleaseDate": "2023-03-23",
+  //  "HasMana": true,
+  //  "IsRanged": false
+  //}
 ]
