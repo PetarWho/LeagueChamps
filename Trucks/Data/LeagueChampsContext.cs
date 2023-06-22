@@ -7,6 +7,7 @@
     {
         public DbSet<Champion> Champions { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Ability> Abilities { get; set; }
         public DbSet<UserChampion> UsersChampions { get; set; }
 
         public LeagueChampsContext() { }

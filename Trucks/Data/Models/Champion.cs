@@ -10,6 +10,7 @@ namespace LeagueChampsDb.Data.Models
         public Champion()
         {
             this.UsersChampions = new HashSet<UserChampion>();
+            this.Abilities = new HashSet<Ability>();
         }
 
         [Key]
@@ -46,5 +47,6 @@ namespace LeagueChampsDb.Data.Models
         public bool IsRanged { get; set; }
 
         public ICollection<UserChampion> UsersChampions { get; set; }
+        public ICollection<Ability> Abilities { get; set; }
     }
 }

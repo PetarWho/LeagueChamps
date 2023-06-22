@@ -141,6 +141,54 @@
             return sb.ToString().TrimEnd();
         }
 
+        public static string ImportAbility(LeagueChampsContext context, string jsonString)
+        {
+            var dtos = JsonConvert.DeserializeObject<ImportAbilityDto[]>(jsonString);
+            var sb = new StringBuilder();
+
+            var abilities = new List<Ability>();
+
+            var champions = context.Champions.ToHashSet();
+
+            foreach (var dto in dtos)
+            {
+                if (!IsValid(dto))
+                {
+                    sb.AppendLine(String.Format(ErrorMessage, dto.Name));
+                }
+
+                if (context.Abilities.Any(a => a.Name == dto.Name))
+                {
+                    sb.AppendLine(String.Format(ErrorMessage, dto.Name + " already exists"));
+                }
+
+                var ability = new Ability()
+                {
+                    Name = dto.Name,
+                    ImageURL = dto.ImageURL,
+                    IsPassive = dto.IsPassive
+                };
+
+
+                foreach (var champ in champions)
+                {
+                    if(champ.Name.ToLower().Trim() == dto.Champion.ToLower().Trim())
+                    {
+                        champ.Abilities.Add(ability);
+                    }
+                }
+
+                abilities.Add(ability);
+
+            }
+            sb.AppendLine($"Successfully inserted {abilities.Count} abilities");
+
+            context.AddRange(abilities);
+            context.SaveChanges();
+
+            return sb.ToString().TrimEnd();
+        }
+
         private static bool IsValid(object dto)
         {
             var validationContext = new ValidationContext(dto);

@@ -31,31 +31,23 @@
 
         private static void ImportEntities(LeagueChampsContext context, string baseDir, string exportDir)
         {
-            var champions =
-             DataProcessor.Deserializer.ImportChampions(context,
-                 File.ReadAllText(baseDir + "champions.json"));
+            //var champions =
+            // DataProcessor.Deserializer.ImportChampions(context,
+            //     File.ReadAllText(baseDir + "champions.json"));
 
-            PrintAndExportEntityToFile(champions, exportDir + "Result - ImportChampions.txt");
+            //PrintAndExportEntityToFile(champions, exportDir + "Result - ImportChampions.txt");
 
-            var users =
-             DataProcessor.Deserializer.ImportUser(context,
-                 File.ReadAllText(baseDir + "users.json"));
+            //var users =
+            // DataProcessor.Deserializer.ImportUser(context,
+            //     File.ReadAllText(baseDir + "users.json"));
 
-            PrintAndExportEntityToFile(users, exportDir + "Result - ImportUsers.txt");
+            //PrintAndExportEntityToFile(users, exportDir + "Result - ImportUsers.txt");
+
+            var abilities =
+             DataProcessor.Deserializer.ImportAbility(context,
+                 File.ReadAllText(baseDir + "abilities.json"));
+            PrintAndExportEntityToFile(abilities, exportDir + "Result - ImportAbilities.txt");
         }
-
-        //private static void ExportEntities(LeagueChampsContext context, string exportDir)
-        //{
-        //    var ExportDespatchersWithTheirTrucks = DataProcessor.Serializer.ExportDespatchersWithTheirTrucks(context);
-        //    Console.WriteLine(ExportDespatchersWithTheirTrucks);
-        //    File.WriteAllText(exportDir + "Actual Result - ExportDespatchersWithTheirTrucks.xml", ExportDespatchersWithTheirTrucks);
-
-        //    int tankCapacity = 1000;
-        //    DateTime releaseDate = DateTime.ParseExact("31/03/2020", "dd/MM/yyyy", CultureInfo.InvariantCulture);
-        //    var ExportClientsWithMostTrucks = DataProcessor.Serializer.ExportClientsWithMostTrucks(context, tankCapacity);
-        //    Console.WriteLine(ExportClientsWithMostTrucks);
-        //    File.WriteAllText(exportDir + "Actual Result - ExportClientsWithMostTrucks.json", ExportClientsWithMostTrucks);
-        //}
 
         private static void ResetDatabase(LeagueChampsContext context, bool shouldDropDatabase = false)
         {
