@@ -1954,18 +1954,53 @@
     "ReleaseDate": "2023-03-23",
     "HasMana": true,
     "IsRanged": false
+  },
+  {
+    "Name": "Naafiri",
+    "Description": "The Dark Assassin",
+    "Image": "https://static.wikia.nocookie.net/leagueoflegends/images/2/23/Milio_OriginalSquare.png/revision/latest/scale-to-width-down/42?cb=20230308011018",
+    "Position": "Mid",
+    "Class": "Assassin",
+    "PriceBE": 6300,
+    "PriceRP": 975,
+    "ReleaseDate": "2023-03-23",
+    "HasMana": true,
+    "IsRanged": false
+  },
+  {
+    "Name": "Briar",
+    "Description": "the Restrained Hunger",
+    "Image": "https://static.wikia.nocookie.net/leagueoflegends/images/f/f6/Briar_OriginalSquare.png/revision/latest/scale-to-width-down/42?cb=20230904203032",
+    "Position": "Jungle",
+    "Class": "Fighter",
+    "PriceBE": 6300,
+    "PriceRP": 975,
+    "ReleaseDate": "2023-09-14",
+    "HasMana": false,
+    "IsRanged": false
+  },
+  {
+    "Name": "Hwei",
+    "Description": "the Visionary",
+    "Image": "https://static.wikia.nocookie.net/leagueoflegends/images/5/5b/Hwei_OriginalSquare.png/revision/latest/scale-to-width-down/42?cb=20231120223123",
+    "Position": "Mid",
+    "Class": "Mage",
+    "PriceBE": 6300,
+    "PriceRP": 975,
+    "ReleaseDate": "2023-12-05",
+    "HasMana": true,
+    "IsRanged": true
+  },
+  {
+    "Name": "Smolder",
+    "Description": "the Fiery Fledgling",
+    "Image": "https://static.wikia.nocookie.net/leagueoflegends/images/7/79/Smolder_OriginalSquare.png/revision/latest/scale-to-width-down/46?cb=20240111191726",
+    "Position": "Bottom",
+    "Class": "Marksman",
+    "PriceBE": 6300,
+    "PriceRP": 975,
+    "ReleaseDate": "2024-01-31",
+    "HasMana": true,
+    "IsRanged": true
   }
-  //,
-  //{
-  //  "Name": "Naafiri",
-  //  "Description": "The Dark Assassin",
-  //  "Image": "https://static.wikia.nocookie.net/leagueoflegends/images/2/23/Milio_OriginalSquare.png/revision/latest/scale-to-width-down/42?cb=20230308011018",
-  //  "Position": "Mid",
-  //  "Class": "Assassin",
-  //  "PriceBE": 6300,
-  //  "PriceRP": 975,
-  //  "ReleaseDate": "2023-03-23",
-  //  "HasMana": true,
-  //  "IsRanged": false
-  //}
 ]
